@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* -------------------------
+   BASE THEME TOKENS (LIGHT)
+--------------------------*/
+:root {
+  --bg: #ffffff;
+  --surface: #f6f6f8;
+  --surface-2: #eeeeF2;
+
+  --text: #5b5563;
+  --text-muted: #7a7483;
+  --text-h: #14111a;
+
+  --border: #e5e4e7;
+
+  --code-bg: #f4f3ec;
+
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+
+  --shadow:
+    rgba(0, 0, 0, 0.08) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* -------------------------
+   DARK THEME
+--------------------------*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16171d;
+    --surface: #1b1c22;
+    --surface-2: #23242c;
+
+    --text: #b0b3bb;
+    --text-muted: #8b8f99;
+    --text-h: #f3f4f6;
+
+    --border: #2e303a;
+
+    --code-bg: #1f2028;
+
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+/* -------------------------
+   ROOT LAYOUT
+--------------------------*/
+#root {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 2vw, 32px);
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  border-inline: 1px solid var(--border);
+  background: var(--bg);
+}
+
+/* -------------------------
+   BASE ELEMENTS
+--------------------------*/
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+/* -------------------------
+   CODE / INLINE ELEMENTS
+--------------------------*/
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 6px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* -------------------------
+   OPTIONAL UTILITY HELPERS
+   (important for your React UI consistency)
+--------------------------*/
+.surface {
+  background: var(--surface);
+}
+
+.surface-2 {
+  background: var(--surface-2);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-theme {
+  border-color: var(--border);
+}
+
+.text-heading {
+  color: var(--text-h);
+}
