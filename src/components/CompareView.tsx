@@ -25,21 +25,26 @@ export default function CompareView({ setupA, setupB }: CompareViewProps) {
           </div>
 
           {/* SETUP COMPARISON ROW */}
-          <div className="flex items-center justify-between">
-            <SetupSummary
-              setupName={setupA.setupName}
-              trackName={setupA.trackName}
-            />
-            <div className="flex just">
+          <div className="grid grid-cols-3 items-center">
+            <div className="justify-self-start">
+              <SetupSummary
+                setupName={setupA.setupName}
+                trackName={setupA.trackName}
+              />
+            </div>
+
+            <div className="flex justify-center items-center whitespace-nowrap gap-20">
               <div className="text-heading font-semibold">A</div>
               <div className="text-muted font-medium px-4">→</div>
               <div className="text-heading font-semibold">B</div>
             </div>
 
-            <SetupSummary
-              setupName={setupB.setupName}
-              trackName={setupB.trackName}
-            />
+            <div className="justify-self-end">
+              <SetupSummary
+                setupName={setupB.setupName}
+                trackName={setupB.trackName}
+              />
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-8">
